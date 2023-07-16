@@ -67,10 +67,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'db',
-        'USER': 'root',
-        'PASSWORD': 'abcd1234',
-        'HOST': 'localhost',
-        'PORT': '3306'
+        'USER': 'dreamtran',
+        'PASSWORD': 'amazonbasics',
+        'HOST': 'dreamtran.mysql.pythonanywhere-services.com',
+       
     }
 }
 
