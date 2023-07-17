@@ -66,7 +66,7 @@ WSGI_APPLICATION = 'dcrm.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db',
+        'NAME': 'dattran2023$db',
         'USER': 'dattran2023',
         'PASSWORD': 'amazonbasics',
         'HOST': 'dattran2023.mysql.pythonanywhere-services.com',
