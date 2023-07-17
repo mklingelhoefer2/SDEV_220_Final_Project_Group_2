@@ -67,9 +67,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'db',
-        'USER': 'dreamtran',
+        'USER': 'dattran2023',
         'PASSWORD': 'amazonbasics',
-        'HOST': 'dreamtran.mysql.pythonanywhere-services.com',
+        'HOST': 'dattran2023.mysql.pythonanywhere-services.com',
        
     }
 }
