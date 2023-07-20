@@ -2,8 +2,22 @@
 
 {% block content %}
 
+<style>
+  
+  .custom-card-header {
+      background-color: #007cb9;
+      color: #000000; 
+  }
+</style>
+<style>
+  
+  .custom-button {
+      background-color: #d5eeff;
+      color: #000000; 
+  }
+</style>
 <div class="card">
-    <div class="card-header">
+  <div class="custom-card-header card-header">
         <h5 class="card-title">
         {{ customer_record.first_name }} {{ customer_record.last_name }} </h5>
     </div>
@@ -16,9 +30,21 @@
   </div>
 
   <br/>
-  <a href="{% url 'contact' %}" class="btn btn-secondary">Back</a>
-  <a href="{% url 'update_record' customer_record.id %}" class="btn btn-secondary">Update</a>
-  <a href="{% url 'delete_record' customer_record.id %}" class="btn btn-danger">Delete</a>
+  <div class="card">
+    <div class="custom-card-header card-header">
+        <h5 class="card-title">
+        Note</h5>
+    </div>
+    <div class="card-body">
+        <p class="card-text"><strong></strong>{{ customer_record.note|linebreaksbr }}</p>
+    </div>
+</div>
+
+  <br/>
+  <a href="{% url 'contact' %}" class="btn btn-secondary custom-button">Back</a>
+  <a href="{% url 'update_record' customer_record.id %}" class="btn btn-secondary custom-button">Update</a>
+  <a href="{% url 'add_note' customer_record.id %}" class="btn btn-secondary custom-button">Add note</a>
+  <a href="{% url 'delete_record' customer_record.id %}" class="btn btn-danger custom-button">Delete</a>
 
     
 

@@ -2,12 +2,18 @@
 
 {% block content %}
 
-
+<style>
+    
+    .custom-button {
+        background-color: #d5eeff;
+        color: #000000; 
+    }
+  </style>
 
 {% if user.is_authenticated %}
     
       <table class="table table-striped table-hover table-bordered">
-        <thead class="table-dark">
+        <thead class="table-light">
           <tr>
             <th scope="col">ID</th>
             <th scope="col">Deal name</th>
@@ -53,7 +59,7 @@
             <input type="password" class="form-control" name="password" placeholder="Password" required>
         </div>
         <br/>
-        <button type="submit" class="btn btn-secondary">Login</button>
+        <button type="submit" class="btn btn-secondary custom-button">Login</button>
     </form>
 
 
@@ -61,6 +67,6 @@
 {% endif %}
 
 <br/>
-<a href="{% url 'add_deal' %}" class="btn btn-secondary">Create deal</a>
+<a href="{% url 'add_deal' %}" class="btn btn-secondary custom-button">Create deal</a>
 
 {% endblock %}

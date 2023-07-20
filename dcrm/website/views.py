@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .forms import AddRecordForm, AddDealForm
-from .models import Record, Deal
+from .forms import AddRecordForm, AddDealForm, AddNoteForm
+from .models import Record, Deal, Task
 
 
 
@@ -145,3 +145,54 @@ def delete_deal(request, pk):
     else:
         messages.success(request, "You must be logged in to delete records.")
         return redirect('deal')
+    
+def add_note(request, pk):
+    if request.user.is_authenticated:
+        current_record = Record.objects.get(id=pk)
+        form2 = AddNoteForm(request.POST or None, instance=current_record)
+        if form2.is_valid():
+            form2.save()
+            messages.success(request, "Added note.")
+            return redirect('home')
+        return render(request, 'add_note.html', {'form2':form2})
+    else:
+        messages.success(request, "You must be logged in.")
+        return redirect('home')
+
+def task_list(request):
+    tasks = Task.objects.all()
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            for task in tasks:
+                task_id = str(task.id)
+                if task_id in request.POST:
+                    task.completed = True
+                else:
+                    task.completed = False
+                task.save()
+        return render(request, 'task_list.html', {'tasks':tasks})
+    else:
+        messages.success(request, "You must be logged in to view deals.")
+        return redirect('home')
+
+def add_task(request):
+    if request.user.is_authenticated:
+        if request.method == "POST":
+            name = request.POST['name']
+            Task.objects.create(name=name)
+            messages.success(request, "Added")
+        return redirect('task_list')
+    else:
+        messages.success(request, "You must be logged in.")
+        return redirect('home')
+
+def delete_task(request, task_id):
+    if request.user.is_authenticated:
+        task = Task.objects.get(pk=task_id)
+        task.delete()
+        messages.success(request, "Deleted")
+        return redirect('task_list')
+    else:
+        messages.success(request, "You must be logged in to delete records.")
+        return redirect('deal')
+

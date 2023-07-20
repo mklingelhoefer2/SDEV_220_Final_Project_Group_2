@@ -1,12 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<style>
+   
+    .custom-button {
+        background-color: #d5eeff;
+        color: #000000; 
+    }
+  </style>
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
 <br/>
-        <button type="submit" class="btn btn-secondary">Update</button>
+        <button type="submit" class="btn btn-secondary custom-button">Update</button>
     </form>
 
 

@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<style>
+ 
+  .custom-button {
+      background-color: #d5eeff;
+      color: #000000; 
+  }
+</style>
 <div class="card">
     <div class="card-header">
         <h5 class="card-title">
@@ -18,9 +24,9 @@
 
   
   <br/>
-  <a href="{% url 'deal' %}" class="btn btn-secondary">Back</a>
-  <a href="{% url 'update_deal' deal_record.id %}" class="btn btn-secondary">Update</a>
-  <a href="{% url 'delete_deal' deal_record.id %}" class="btn btn-danger">Delete</a>
+  <a href="{% url 'deal' %}" class="btn btn-secondary custom-button">Back</a>
+  <a href="{% url 'update_deal' deal_record.id %}" class="btn btn-secondary custom-button">Update</a>
+  <a href="{% url 'delete_deal' deal_record.id %}" class="btn btn-danger custom-button">Delete</a>
 
     
 

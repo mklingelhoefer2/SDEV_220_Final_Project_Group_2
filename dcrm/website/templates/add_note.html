@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+<style>
+    
+    .custom-button {
+        background-color: #d5eeff;
+        color: #000000; 
+    }
+  </style>
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form2.as_p }}
+<br/>
+        <button type="submit" class="btn btn-secondary custom-button">Add</button>
+        <a href="{% url 'contact' %}" class="btn btn-secondary custom-button">Back</a>
+    </form>
+
+
+{% endblock %}

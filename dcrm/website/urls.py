@@ -16,5 +16,10 @@ urlpatterns = [
     path('deal/<int:pk>', views.deal_record, name='deal_record'),
     path('update_deal/<int:pk>', views.update_deal, name='update_deal'),
     path('delete_deal/<int:pk>', views.delete_deal, name='delete_deal'),
+    path('add_note/<int:pk>', views.add_note, name='add_note'),
+    path('tasks/', views.task_list, name='task_list'),
+    path('tasks/add/', views.add_task, name='add_task'),
+    path('tasks/delete/<int:task_id>/', views.delete_task, name='delete_task'),
+
 ]
 
