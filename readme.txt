@@ -3,7 +3,10 @@
 
 ## Description
 
-The Clearview CRM Web App is a customer relationship management system designed specifically for insurance professionals. It provides a user-friendly interface for managing deals, contacts, and tasks to streamline and optimize the insurance sales process.
+The Clearview CRM Web App is a customer relationship management system 
+designed specifically for insurance professionals. 
+It provides a user-friendly interface for managing deals, contacts, 
+and tasks to streamline and optimize the insurance sales process.
 
 ## Features
 
